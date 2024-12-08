@@ -151,7 +151,7 @@ nix_arguments = "--flake /etc/nixos/"
 nix_env_arguments = "--quiet --always --prebuilt-only"
 
 # Extra Home Manager arguments
-# home_manager_arguments = ["--flake", "file"]
+home_manager_arguments = ["--flake ~/.config/home-manager", "file"]
 
 
 [git]
