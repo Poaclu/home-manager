@@ -14,6 +14,7 @@ in {
       btop
       eza
       fastfetch
+      git
       obsidian
       starship
       xfce.thunar
