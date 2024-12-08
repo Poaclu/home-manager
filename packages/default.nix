@@ -2,7 +2,7 @@
   imports = [
     ./btop
     ./fastfetch
-    #./git
+    ./git
     ./kitty
     ./nvim
     ./shell
