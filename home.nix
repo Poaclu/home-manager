@@ -16,6 +16,7 @@ in {
       fastfetch
       git
       obsidian
+      parsec-bin
       starship
       xfce.thunar
       tldr
