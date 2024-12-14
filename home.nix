@@ -1,9 +1,6 @@
 { config, pkgs, ... }: let
   username = "poaclu";
 in { 
-  imports = [
-    ./packages
-  ];
   home = {
     username = "${username}";
     homeDirectory = "/home/${username}";
@@ -52,13 +49,71 @@ in {
     #
     #  /etc/profiles/per-user/poaclu/etc/profile.d/hm-session-vars.sh
     #
-      sessionVariables = {
-        EDITOR = "nvim";
-      };
+    sessionVariables = {
+      EDITOR = "nvim";
+    };
   };
 
   nixpkgs.config.allowUnfree = true;
 
   # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  programs = {
+    btop.enable = true;
+    fastfetch.enable = true;
+    git = {
+      enable = true;
+      userName = "Poaclu";
+      userEmail = "25772718+Poaclu@users.noreply.github.com";
+    };
+    home-manager.enable = true;
+    kitty = {
+      enable = true;
+      themeFile = "GruvboxMaterialDarkHard";
+      settings = {
+        font_family = "Liberation Mono";
+        bold_font = "auto";
+        italic_font = "auto";
+        bold_italic_font = "auto";
+        font_size = 8.0;
+        background_opacity = 0.7;
+        dynamic_background_opacity = "yes";
+      };
+    };
+    starship = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+    topgrade.enable = true;
+    neovim.enable = true;
+    zoxide = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+    zsh = {
+      enable = true;
+      oh-my-zsh = {
+        enable = true;
+        plugins = [
+          "aliases"
+          "colored-man-pages"
+          "fzf"
+          "ufw"
+          "zsh-interactive-cd"
+        ];
+      };
+      initExtra = "source $HOME/.aliasrc\nsource $HOME/.shellrc";
+      shellAliases = {
+        cd = "z";
+        nix-rebuild = "sudo nixos-rebuild switch --flake /etc/nixos/";
+        home-rebuild = "home-manager switch --flake ~/.config/home-manager/";
+      };
+    };
+  };
+  xdg.configFile = {
+    "btop/btop.conf".source = ./packages/btop/btop.conf;
+    "../.aliasrc".source = ./packages/shell/aliasrc;
+    "../.bashrc".source = ./packages/shell/bashrc;
+    "../.shellrc".source = ./packages/shell/shellrc;
+    "topgrade.toml".source = ./packages/topgrade/topgrade.toml;
+  };
 }
