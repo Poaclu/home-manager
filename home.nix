@@ -11,6 +11,7 @@ in {
       btop
       eza
       fastfetch
+      fzf
       git
       obsidian
       parsec-bin
