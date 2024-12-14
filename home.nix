@@ -90,6 +90,9 @@ in {
       enable = true;
       enableZshIntegration = true;
     };
+    waybar = {
+      enable = true;
+    };
     zsh = {
       enable = true;
       oh-my-zsh = {
