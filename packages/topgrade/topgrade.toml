@@ -15,7 +15,7 @@
 sudo_command = "sudo"
 
 # Disable specific steps - same options as the command line flag
-disable = ["node", "git_repos", "nix"]
+disable = ["node", "git_repos", "nix", "home_manager"]
 
 # Ignore failures for these steps
 # ignore_failures = ["powershell"]
@@ -92,6 +92,7 @@ notify_each_step = true
 #"mlocate database" = "echo 'Launching command' && sudo updatedb && echo 'Done !'"
 #"ClamAV" = "sudo freshclam"
 #"dotter" = "cd ~/sources/config/ && dotter -v && echo 'Done !' || echo 'error, go do logs manually'"
+"home-manager" = "home-manager switch --flake ~/.config/home-manager/"
 
 [python]
 # enable_pip_review = true                         ###disabled by default
@@ -151,7 +152,7 @@ nix_arguments = "--flake /etc/nixos/"
 nix_env_arguments = "--quiet --always --prebuilt-only"
 
 # Extra Home Manager arguments
-home_manager_arguments = ["--flake ~/.config/home-manager", "file"]
+home_manager_arguments = ["--flake ~/.config/home-manager || home-rebuild || home-manager switch --flake ~/.config/home-manager || echo 'wtf'"]
 
 
 [git]
