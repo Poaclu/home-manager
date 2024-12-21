@@ -9,6 +9,7 @@ in {
       bat
       brave
       btop
+      discord
       eza
       fastfetch
       fzf
