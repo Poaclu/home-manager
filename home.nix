@@ -4,7 +4,7 @@ in {
   home = {
     username = "${username}";
     homeDirectory = "/home/${username}";
-    stateVersion = "unstable"; # Please read the comment before changing.
+    stateVersion = "24.11"; # Please read the comment before changing.
     packages = with pkgs; [
       bat
       brave
