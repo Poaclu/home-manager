@@ -129,7 +129,12 @@
 								"$mainMod, mouse:273, resizewindow"
 							];
 							windowrulev2 = [ 
-								"suppressevent maximize, class:.* # You'll probably like this."
+								"suppressevent maximize, class:.*" # You'll probably like this.
+								"workspace 2,class:(firefox)"
+								"workspace 7,class:(steam)"
+								"workspace 8,class:(obsidian)"
+								"workspace 9,class:(discord)"
+								"workspace 10,class:(kitty btop)"
 							];
 		};
 	};
