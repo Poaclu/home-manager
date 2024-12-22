@@ -2,69 +2,37 @@
 	wayland.windowManager.hyprland = {
 		enable = true;
 		settings = {
-
-
 			monitor = ",preferred,auto,auto";
-
-
-
-
 			"$terminal" = "kitty";
 			"$fileManager" = "dolphin";
 			"$apps" = "wofi --show drun";
 			"$browser" = "firefox";
 			"$menu" = "wlogout";
 			"$lock" = "swaylock";
-
-
-
-
 			exec-once = [ 
 				"$terminal"
 				"nm-applet --indicator &"
 				"waybar &"
 				"swww-daemon && swww img ~/Images/Wallpaper/1i918gwz1gl61.png"
 			];
-
-
-
-
 			env = [ 
 				"XCURSOR_SIZE,24"
 				"HYPRCURSOR_SIZE,24"
 			];
-
-
-
-
 			general = { 
 				gaps_in = 5;
 				gaps_out = 20;
-
 				border_size = 2;
-
-# https://wiki.hyprland.org/Configuring/Variables/#variable-types for info about colors
 				"col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
 				"col.inactive_border" = "rgba(595959aa)";
-
-# Set to true enable resizing windows by clicking and dragging on borders and gaps
 				resize_on_border = false;
-
-# Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
 				allow_tearing = false;
-
 				layout = "dwindle";
 			};
-
 			decoration = {
 				rounding = 10;
-
-# Change transparency of focused and unfocused windows
 					active_opacity = 1.0;
 					inactive_opacity = 1.0;
-
-
-# https://wiki.hyprland.org/Configuring/Variables/#blur
 					blur = {
 						enabled = true;
 						size = 3;
@@ -72,57 +40,37 @@
 						vibrancy = 0.1696;
 					};
 			};
-
 			animations = {
 				enabled = true;
-
-# Default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
-
 					bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
-
 			};
-
 			dwindle = {
 				pseudotile = true; # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section belou
 					preserve_split = true; # You probably want this
 			};
-
 			#master = {
 			#	new_status = master;
 			#};
-
 			misc = { 
 				force_default_wallpaper = -1; # Set to 0 or 1 to disable the anime mascot wallpapers
 					disable_hyprland_logo = true; # If true disables the random hyprland logo / anime girl background. :(
 							};
-
-
-
 							input = {
 							kb_layout = "fr";
-
 							follow_mouse = 1;
-
 							sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
-
 							touchpad = {
 							natural_scroll = true;
 							};
 							};
-
 							gestures = {
 								workspace_swipe = false;
 							};
-
 							device = {
 								name = "epic-mouse-v1";
 								sensitivity = -0.5;
 							};
-
-
-
 							"$mainMod" = "SUPER"; # Sets "Windows" key as main modifier";
-
 							bind = [ 
 								"$mainMod, Q, exec, $terminal"
 								"$mainMod, C, killactive,"
@@ -165,7 +113,6 @@
 								"$mainMod, mouse_down, workspace, e+1"
 								"$mainMod, mouse_up, workspace, e-1"
 							];
-
 							"$desk1" = "ampersand";
 							"$desk2" = "eacute";
 							"$desk3" = "quotedbl";
@@ -176,21 +123,13 @@
 							"$desk8" = "underscore";
 							"$desk9" = "ccedilla";
 							"$desk10" = "agrave";
-
 							bindm = [ 
 								"$mainMod, mouse:272, movewindow"
 								"$mainMod, mouse:273, resizewindow"
 							];
-
-
-
-
-
-
 							windowrulev2 = [ 
 								"suppressevent maximize, class:.* # You'll probably like this."
 							];
-
 		};
 	};
 }
