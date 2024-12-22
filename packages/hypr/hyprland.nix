@@ -2,7 +2,7 @@
 	wayland.windowManager.hyprland = {
 		enable = true;
 		settings = {
-			monitor = ",preferred,auto,auto";
+			monitor = ",preferred,auto,auto,vrr,1";
 			"$terminal" = "kitty";
 			"$fileManager" = "dolphin";
 			"$apps" = "wofi --show drun";
@@ -52,6 +52,7 @@
 			#	new_status = master;
 			#};
 			misc = { 
+				vrr = 1;
 				force_default_wallpaper = -1; # Set to 0 or 1 to disable the anime mascot wallpapers
 					disable_hyprland_logo = true; # If true disables the random hyprland logo / anime girl background. :(
 							};
