@@ -12,8 +12,12 @@
 			exec-once = [ 
 				"$terminal"
 				"nm-applet --indicator &"
-				"waybar &"
+				"waybar"
 				"swww-daemon && swww img ~/Images/Wallpaper/1i918gwz1gl61.png"
+				"$browser"
+				"discord"
+				"steam"
+				"obsidian"
 			];
 			env = [ 
 				"XCURSOR_SIZE,24"
