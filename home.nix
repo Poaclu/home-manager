@@ -17,6 +17,7 @@ in {
 				fastfetch
 				fzf
 				git
+				microsoft-edge
 				obsidian
 				parsec-bin
 				starship
