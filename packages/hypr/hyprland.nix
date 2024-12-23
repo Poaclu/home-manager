@@ -1,4 +1,16 @@
-{
+{ pkgs, ... }:
+let
+barRestart = pkgs.writeShellScriptBin "barRestart" ''
+#!/bin/sh
+killall waybar
+if [[ $USER = "poaclu" ]]
+then
+waybar -c ~/.config/waybar/myconfig & -s ~/.config/waybar/style.css
+else
+waybar &
+fi
+'';
+in{
 	wayland.windowManager.hyprland = {
 		enable = true;
 		settings = {
@@ -117,6 +129,7 @@
 								"$mainMod SHIFT, S, movetoworkspace, special:magic"
 								"$mainMod, mouse_down, workspace, e+1"
 								"$mainMod, mouse_up, workspace, e-1"
+								"$mainMod SHIFT, B, exec, ${barRestart}/bin/barRestart"
 							];
 							"$desk1" = "ampersand";
 							"$desk2" = "eacute";
