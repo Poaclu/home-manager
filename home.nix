@@ -20,6 +20,7 @@ in {
 				microsoft-edge
 				obsidian
 				parsec-bin
+				spotify
 				starship
 				xfce.thunar
 				tldr
