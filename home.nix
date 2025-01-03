@@ -23,6 +23,7 @@ in {
 				spotify
 				starship
 				xfce.thunar
+				thefuck
 				tldr
 				topgrade
 				zoxide
@@ -123,6 +124,10 @@ in {
 				text-ver-color = "89b4fa";
 				text-wrong-color = "eba0ac";
 			};
+		};
+		thefuck = {
+			enable = true;
+			enableZshIntegration = true;
 		};
 		topgrade.enable = true;
 		neovim.enable = true;
