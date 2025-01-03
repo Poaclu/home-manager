@@ -199,6 +199,9 @@ in {
 			};
 		};
 	};
+	services.flameshot = {
+		enable = true;
+	};
 	xdg.configFile = {
 		"btop/btop.conf".source = ./packages/btop/btop.conf;
 		"../.aliasrc".source = ./packages/shell/aliasrc;
