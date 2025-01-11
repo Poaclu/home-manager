@@ -13,7 +13,7 @@ in {
 				brave
 				btop
 				discord
-				discord-overlay
+				discover-overlay
 				eza
 				fastfetch
 				fzf
