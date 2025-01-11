@@ -28,6 +28,7 @@ in{
 				"swww-daemon && swww img ~/Images/Wallpaper/1i918gwz1gl61.png"
 				"$browser"
 				"discord"
+				"discord-overlay"
 				"steam"
 				"obsidian"
 			];

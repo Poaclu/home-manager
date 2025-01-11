@@ -9,10 +9,11 @@ in {
 		homeDirectory = "/home/${username}";
 		stateVersion = "24.11"; # Please read the comment before changing.
 			packages = with pkgs; [
-			bat
+				bat
 				brave
 				btop
 				discord
+				discord-overlay
 				eza
 				fastfetch
 				fzf
@@ -20,6 +21,7 @@ in {
 				microsoft-edge
 				obsidian
 				parsec-bin
+				pavucontrol
 				spotify
 				starship
 				xfce.thunar
