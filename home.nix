@@ -208,6 +208,7 @@ in {
 		"../.bashrc".source = ./packages/shell/bashrc;
 		"../.shellrc".source = ./packages/shell/shellrc;
 		"topgrade.toml".source = ./packages/topgrade/topgrade.toml;
+		"nvim/init.lua".source = ./packages/nvim/init.lua;
 #"hypr/hyprland.conf".source = ./packages/hypr/hyprland.conf;
 	};
 }
