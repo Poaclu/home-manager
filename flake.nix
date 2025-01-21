@@ -2,18 +2,18 @@
   description = "Home Manager configuration of poaclu";
 
   inputs = {
-    # Specify the source of Home Manager and Nixpkgs.
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # Import nix-config from GitHub
+    nix-config.url = "github:Poaclu/nix-config/modules";
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nix-config/nixpkgs";
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nix-config, home-manager, ... }:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import nix-config.inputs.nixpkgs { inherit system; };
     in {
       homeConfigurations."poaclu" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
