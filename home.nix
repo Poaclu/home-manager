@@ -1,12 +1,9 @@
-{ pkgs, ... }: let
-username = "poaclu";
-in { 
+{ pkgs, ... }:
+{ 
 	imports = [
 	  ./packages/hypr/hyprland.nix
 	];
 	home = {
-		username = "${username}";
-		homeDirectory = "/home/${username}";
 		stateVersion = "24.11"; # Please read the comment before changing.
 			packages = with pkgs; [
 				bat
