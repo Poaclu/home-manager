@@ -153,9 +153,6 @@
 	};
 	xdg.configFile = {
 		"btop/btop.conf".source = ./packages/btop/btop.conf;
-		"../.aliasrc".source = ./packages/shell/aliasrc;
-		"../.bashrc".source = ./packages/shell/bashrc;
-		"../.shellrc".source = ./packages/shell/shellrc;
 		"topgrade.toml".source = ./packages/topgrade/topgrade.toml;
 		"nvim/init.lua".source = ./packages/nvim/init.lua;
 #"hypr/hyprland.conf".source = ./packages/hypr/hyprland.conf;
