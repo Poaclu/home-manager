@@ -23,9 +23,6 @@
         tldr
         zoxide
       ];
-      sessionVariables = {
-        EDITOR = "nvim";
-      };
     };
 
     programs = {
