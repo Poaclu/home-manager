@@ -6,26 +6,16 @@
 	home = {
 		stateVersion = "24.11"; # Please read the comment before changing.
 			packages = with pkgs; [
-				bat
 				brave
-				btop
 				discord
 				discover-overlay
-				eza
-				fastfetch
-				fzf
 				git
 				microsoft-edge
 				obsidian
 				parsec-bin
 				pavucontrol
 				spotify
-				starship
 				xfce.thunar
-				thefuck
-				tldr
-				topgrade
-				zoxide
 			];
 		file = {
 # # Building this configuration will create a copy of 'dotfiles/screenrc' in
@@ -56,15 +46,10 @@
 #
 #  /etc/profiles/per-user/poaclu/etc/profile.d/hm-session-vars.sh
 #
-		sessionVariables = {
-			EDITOR = "nvim";
-		};
-	};
 
 # Let Home Manager install and manage itself.
 	programs = {
 		btop.enable = true;
-		fastfetch.enable = true;
 		git = {
 			enable = true;
 			userName = "Poaclu";
@@ -82,10 +67,6 @@
 				background_opacity = 0.7;
 				dynamic_background_opacity = "yes";
 			};
-		};
-		starship = {
-			enable = true;
-			enableZshIntegration = true;
 		};
 		swaylock = {
 			enable = true;
@@ -121,11 +102,6 @@
 				text-wrong-color = "eba0ac";
 			};
 		};
-		thefuck = {
-			enable = true;
-			enableZshIntegration = true;
-		};
-		topgrade.enable = true;
 		neovim.enable = true;
 		wlogout = {
 			enable = true;
@@ -168,31 +144,8 @@
 			}
 			];
 		};
-		zoxide = {
-			enable = true;
-			enableZshIntegration = true;
-		};
 		waybar = {
 			enable = true;
-		};
-		zsh = {
-			enable = true;
-			oh-my-zsh = {
-				enable = true;
-				plugins = [
-					"aliases"
-						"colored-man-pages"
-						"fzf"
-						"ufw"
-						"zsh-interactive-cd"
-				];
-			};
-			initExtra = "source $HOME/.aliasrc\nsource $HOME/.shellrc";
-			shellAliases = {
-				cd = "z";
-				nix-rebuild = "sudo nixos-rebuild switch --flake /etc/nixos/";
-				home-rebuild = "home-manager switch --flake ~/.config/home-manager/";
-			};
 		};
 	};
 	services.flameshot = {
