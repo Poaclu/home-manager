@@ -49,7 +49,6 @@
 
 # Let Home Manager install and manage itself.
 	programs = {
-		btop.enable = true;
 		git = {
 			enable = true;
 			userName = "Poaclu";
@@ -152,7 +151,6 @@
 		enable = true;
 	};
 	xdg.configFile = {
-		"btop/btop.conf".source = ./packages/btop/btop.conf;
 		"topgrade.toml".source = ./packages/topgrade/topgrade.toml;
 		"nvim/init.lua".source = ./packages/nvim/init.lua;
 #"hypr/hyprland.conf".source = ./packages/hypr/hyprland.conf;
