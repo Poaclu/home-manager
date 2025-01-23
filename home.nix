@@ -70,7 +70,6 @@
 			userName = "Poaclu";
 			userEmail = "25772718+Poaclu@users.noreply.github.com";
 		};
-		home-manager.enable = true;
 		kitty = {
 			enable = true;
 			themeFile = "GruvboxMaterialDarkHard";
