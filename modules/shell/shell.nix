@@ -26,9 +26,6 @@ in {
       };
     };
     xdg.configFile = {
-      "../.aliasrc".source = ./packages/shell/aliasrc;
-      "../.bashrc".source = ./packages/shell/bashrc;
-      "../.shellrc".source = ./packages/shell/shellrc;
       "topgrade.toml".source = ./packages/topgrade/topgrade.toml;
     };
   }
