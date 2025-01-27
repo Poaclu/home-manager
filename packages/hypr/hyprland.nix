@@ -92,7 +92,7 @@ in{
 							bind = [ 
 								"$mainMod, Q, exec, $terminal"
 								"$mainMod, C, killactive,"
-								"$mainMod, M, exit,"
+								#"$mainMod, M, exit,"
 								"$mainMod, E, exec, $fileManager"
 								"$mainMod, V, togglefloating,"
 								"$mainMod, R, exec, $apps"
