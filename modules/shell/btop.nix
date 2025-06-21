@@ -24,4 +24,5 @@ in {
     xdg.configFile = {
       "config/btop.conf".source = ./packages/btop/btop.conf;
     };
-  }
+  };
+}

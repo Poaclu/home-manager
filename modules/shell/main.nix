@@ -65,4 +65,5 @@
       "../.bashrc".source = ./packages/shell/bashrc;
       "../.shellrc".source = ./packages/shell/shellrc;
     };
-  }
+  };
+}

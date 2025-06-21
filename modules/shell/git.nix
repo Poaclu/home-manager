@@ -28,4 +28,5 @@
         userEmail = config.shell.git.mail;
       };
     };
-  }
+  };
+}

@@ -28,4 +28,5 @@ in {
     xdg.configFile = {
       "topgrade.toml".source = ./packages/topgrade/topgrade.toml;
     };
-  }
+  };
+}

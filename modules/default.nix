@@ -1,7 +1,7 @@
 {
   imports = [
-    ./shell/
-    ./desktop/
+    ./shell
+    ./desktop
     ./user.nix
     ./main.nix
   ];

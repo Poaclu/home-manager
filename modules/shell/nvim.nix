@@ -22,4 +22,5 @@
     xdg.configFile = {
       "config/init.lua".source = ./packages/nvim/init.lua;
     };
-  }
+  };
+}
