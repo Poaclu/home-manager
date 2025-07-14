@@ -20,7 +20,7 @@
       neovim.enable = true;
     };
     xdg.configFile = {
-      "config/init.lua".source = ./packages/nvim/init.lua;
+      "nvim/init.lua".source = ./config/init.lua;
     };
   };
 }

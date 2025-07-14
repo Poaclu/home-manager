@@ -3,7 +3,7 @@
 
   inputs = {
     # Import nix-config from GitHub
-    nix-config.url = "github:Poaclu/nix-config";
+    nix-config.url = "github:Poaclu/nix-config/update/unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nix-config/nixpkgs";
