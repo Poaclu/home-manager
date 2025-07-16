@@ -37,10 +37,6 @@ in{
 				"steam"
 				"obsidian"
 			];
-#env = [ 
-#	"XCURSOR_SIZE,24"
-#	"HYPRCURSOR_SIZE,24"
-#];
 			general = { 
 				gaps_in = 5;
 				gaps_out = 20;
@@ -70,6 +66,9 @@ in{
 				enabled = true;
 				bezier = "myBezier, 0.6, -0.28, 0.735, 0.045";
 			};
+			workspace = [
+				"10, monitor:DP-2"
+			];
 			dwindle = {
 				pseudotile = true; # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section belou
 					preserve_split = true; # You probably want this

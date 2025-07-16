@@ -117,9 +117,6 @@
         }
         ];
       };
-      waybar = {
-        enable = true;
-      };
     };
     services.flameshot = {
       enable = true;

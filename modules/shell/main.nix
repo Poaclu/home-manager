@@ -15,14 +15,9 @@
       stateVersion = "24.11"; # DO NOT CHANGE : The state version is required and should stay at the version you originally installed.
       packages = with pkgs; [
         bat
-        btop
         eza
-        fastfetch
         fzf
-        starship
-        pay-respects
         tldr
-        zoxide
       ];
     };
 
@@ -78,7 +73,7 @@
               "zsh-interactive-cd"
           ];
         };
-	initContent = "fastfetch";
+	initContent = "clear && fastfetch";
 	sessionVariables = {
 		VISUAL = "bat";
 		EDITOR = "nvim";

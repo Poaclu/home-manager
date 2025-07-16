@@ -85,20 +85,21 @@
 				"custom/notification" = {
 					tooltip = false;
 					format = "";
-					on-click = "swaync-client -t -sw";
+					on-click = "dunstctl history-pop";
 					escape = true;
 				};
 				"custom/power" = {
 					format = "⏻ ";
 					tooltip = false;
-					menu = "on-click";
-					menu-file = "$HOME/.config/waybar/power_menu.xml";
-					menu-actions = {
-						shutdown = "shutdown";
-						reboot = "reboot";
-						suspend = "systemctl suspend";
-						hibernate = "systemctl hibernate";
-					};
+					#menu = "on-click";
+					#menu-file = "$HOME/.config/waybar/power_menu.xml";
+					#menu-actions = {
+					#	shutdown = "shutdown";
+					#	reboot = "reboot";
+					#	suspend = "systemctl suspend";
+					#	hibernate = "systemctl hibernate";
+					#};
+					on-click = "wlogout";
 				};
 			};
 		};
