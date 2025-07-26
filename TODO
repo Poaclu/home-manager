@@ -2,4 +2,4 @@
 
 - [ ] Configuring flameshot for wayland
 - [ ] Fixing cursor support in Hyprland
-- [ ] Create modules for Home-manager
+- [X] Create modules for Home-manager
