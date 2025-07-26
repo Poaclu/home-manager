@@ -109,7 +109,7 @@
           gs = "git status";
           hackwow = "cmatrix | lolcat";
           history = "omz_history";
-          home-rebuild = "home-manager switch --flake ~/.config/home-manager/";
+          home-rebuild = "home-manager switch --flake ~/.config/home-manager/ -b bak";
           ksh = "kitty +kitten ssh";
           l = "ls -lah";
           la = "ls -lAh";

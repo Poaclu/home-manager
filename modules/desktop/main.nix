@@ -19,6 +19,7 @@
           font-awesome
           libmpdclient
           microsoft-edge
+          nautilus
           obsidian
           parsec-bin
           pavucontrol
@@ -81,42 +82,43 @@
         layout = [
         {
           label = "lock";
-          action = "swaylock";
-          text = "Lock";
+          action = "hyprlock";
+          text = "Lock (L)";
           keybind = "l";
         }
         {
           label = "hibernate";
-          action = "systemctl hibernate && swaylock";
-          text = "Hibernate";
+          action = "hyprlock & sleep 2 && systemctl hibernate";
+          text = "Hibernate (H)";
           keybind = "h";
         }
         {
           label = "logout";
           action = "loginctl terminate-user $USER";
-          text = "Logout";
+          text = "Logout (E)";
           keybind = "e";
         }
         {
           label = "shutdown";
           action = "systemctl poweroff";
-          text = "Shutdown";
+          text = "Shutdown (S)";
           keybind = "s";
         }
         {
           label = "suspend";
-          action = "systemctl suspend && swaylock";
-          text = "Suspend";
+          action = "hyprlock & sleep 2 && systemctl suspend";
+          text = "Suspend (U)";
           keybind = "u";
         }
         {
           label = "reboot";
           action = "systemctl reboot";
-          text = "Reboot";
+          text = "Reboot (R)";
           keybind = "r";
         }
         ];
       };
+      zen-browser.enable = true;
     };
     services.flameshot = {
       enable = true;

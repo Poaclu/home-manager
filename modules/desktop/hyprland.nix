@@ -1,45 +1,40 @@
-{ pkgs, ... }:
-let
-barRestart = pkgs.writeShellScriptBin "barRestart" ''
-#!/bin/sh
-killall waybar
-if [[ $USER = "poaclu" ]]
-then
-waybar -c ~/.config/waybar/myconfig & -s ~/.config/waybar/style.css
-else
-waybar &
-fi
-'';
-in{
+{ config, inputs, pkgs, ... }:
+{
 	wayland.windowManager.hyprland = {
 		enable = true;
+		package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+		portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
 		settings = {
 			monitor = [
-				"DP-3,preferred,0x0,auto,vrr,1,cm,hdredid"
-				"HDMI-A-1,preferred,auto-left,auto,vrr,1"
-				"DP-2,preferred,auto-right,auto,vrr,1"
+				"desc:LG Electronics LG ULTRAGEAR 308MAHUCD521,preferred,0x0,auto,vrr,1,cm,hdr"
+				"desc:Samsung Electric Company LF27T35 HK2T402563,preferred,auto-left,auto,vrr,1"
+				"desc:Samsung Electric Company S19C450 H4MG101147,preferred,auto-right,auto,vrr,1"
 				",preferred,auto,auto,vrr,1"
 			];
 			"$terminal" = "kitty";
-			"$fileManager" = "dolphin";
+			"$fileManager" = "nautilus";
 			"$apps" = "wofi --show drun";
-			"$browser" = "firefox";
+			"$browser" = "zen-beta";
 			"$menu" = "wlogout";
-			"$lock" = "swaylock";
+			"$lock" = "hyprlock";
 			exec-once = [ 
 				"$terminal"
 				"nm-applet --indicator &"
-				"waybar"
-				"swww-daemon && swww restore"
+				"systemctl --user start waybar.service"
+				"swww-daemon &"
 				"$browser"
 				"discord"
 				"discover-overlay"
 				"steam"
 				"obsidian"
 			];
+			ecosystem = {
+				no_update_news = true;
+				no_donation_nag = true;
+			};
 			general = { 
 				gaps_in = 5;
-				gaps_out = 20;
+				gaps_out = 5;
 				border_size = 2;
 				"col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
 				"col.inactive_border" = "rgba(595959aa)";
@@ -108,7 +103,7 @@ in{
 							"$mainMod, P, pseudo, # dwindle"
 							"$mainMod, J, togglesplit, # dwindle"
 							"$mainMod, B, exec, brave"
-							"$mainMod, F, exec, firefox"
+							"$mainMod, F, exec, $browser"
 							"$mainMod, L, exec, $lock"
 							"Control_L Alt_L, Delete, exec, $menu"
 							"$mainMod, left, movefocus, l"
@@ -139,7 +134,6 @@ in{
 							"$mainMod SHIFT, S, movetoworkspace, special:magic"
 							"$mainMod, mouse_down, workspace, e+1"
 							"$mainMod, mouse_up, workspace, e-1"
-							"$mainMod SHIFT, B, exec, ${barRestart}/bin/barRestart"
 							];
 				"$desk1" = "ampersand";
 				"$desk2" = "eacute";
@@ -157,7 +151,7 @@ in{
 				];
 				windowrulev2 = [ 
 					"suppressevent maximize, class:.*" # You'll probably like this.
-					"workspace 2,class:(firefox)"
+					"workspace 2,class:($browser)"
 					"workspace 7,class:(steam)"
 					"workspace 8,class:(obsidian)"
 					"workspace 9,class:(discord)"
