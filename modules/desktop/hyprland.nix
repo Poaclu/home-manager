@@ -6,21 +6,22 @@
 		portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
 		settings = {
 			monitor = [
-				"desc:LG Electronics LG ULTRAGEAR 308MAHUCD521,preferred,0x0,auto,vrr,1,cm,hdr"
-				"desc:Samsung Electric Company LF27T35 HK2T402563,preferred,auto-left,auto,vrr,1"
-				"desc:Samsung Electric Company S19C450 H4MG101147,preferred,auto-right,auto,vrr,1"
-				",preferred,auto,auto,vrr,1"
+				"desc:LG Electronics LG ULTRAGEAR 308MAHUCD521, preferred, 0x0, auto, vrr, 1, cm, hdredid"
+				"desc:Samsung Electric Company LF27T35 HK2T402563, preferred, auto-center-left, auto, vrr, 1, cm, auto"
+				"desc:Samsung Electric Company S19C450 H4MG101147, preferred, auto-center-right, auto, vrr, 1, cm, auto"
+				"desc:AU Optronics 0x499F,prefered,auto,1,vrr,1"
+				", preferred, auto, auto, vrr, 1, cm, auto"
 			];
 			"$terminal" = "kitty";
 			"$fileManager" = "nautilus";
 			"$apps" = "wofi --show drun";
 			"$browser" = "zen-beta";
-			"$menu" = "wlogout";
+			"$menu" = "pkill wlogout || wlogout";
 			"$lock" = "hyprlock";
 			exec-once = [ 
 				"$terminal"
 				"nm-applet --indicator &"
-				"systemctl --user start waybar.service"
+				"sleep 1 && systemctl --user start waybar.service"
 				"swww-daemon &"
 				"$browser"
 				"discord"
@@ -94,8 +95,8 @@
 							};
 							"$mainMod" = "SUPER"; # Sets "Windows" key as main modifier";
 							bind = [ 
-							"$mainMod, Q, exec, $terminal"
-							"$mainMod, C, killactive,"
+							"$mainMod, Return, exec, $terminal"
+							"$mainMod, Q, killactive,"
 							#"$mainMod, M, exit,"
 							"$mainMod, E, exec, $fileManager"
 							"$mainMod, V, togglefloating,"
@@ -145,6 +146,14 @@
 				"$desk8" = "underscore";
 				"$desk9" = "ccedilla";
 				"$desk10" = "agrave";
+				bindl = [
+					", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+					", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+					", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+					", XF86AudioPlay, exec, playerctl play-pause"
+					", XF86AudioNext, exec, playerctl next"
+					", XF86AudioPrev, exec, playerctl previous"
+				];
 				bindm = [ 
 					"$mainMod, mouse:272, movewindow"
 					"$mainMod, mouse:273, resizewindow"
