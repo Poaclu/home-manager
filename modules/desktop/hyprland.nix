@@ -21,7 +21,7 @@
 			exec-once = [ 
 				"$terminal"
 				"nm-applet --indicator &"
-				"systemctl --user start waybar.service"
+				"sleep 1 && systemctl --user start waybar.service"
 				"swww-daemon &"
 				"$browser"
 				"discord"
