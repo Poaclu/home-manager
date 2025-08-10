@@ -95,8 +95,8 @@
 							};
 							"$mainMod" = "SUPER"; # Sets "Windows" key as main modifier";
 							bind = [ 
-							"$mainMod, Q, exec, $terminal"
-							"$mainMod, C, killactive,"
+							"$mainMod, Return, exec, $terminal"
+							"$mainMod, Q, killactive,"
 							#"$mainMod, M, exit,"
 							"$mainMod, E, exec, $fileManager"
 							"$mainMod, V, togglefloating,"
