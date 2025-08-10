@@ -20,19 +20,29 @@
       system = "x86_64-linux";
       pkgs = import nix-config.inputs.nixpkgs { inherit system; };
     in {
-      homeConfigurations."poaclu" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        extraSpecialArgs = { inputs = inputs; };
-
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
-        modules = [ 
-            ./modules
+      homeConfigurations = {
+        poaclu = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [ 
+              ./modules/minimal.nix
+            ];
+        };
+        "poaclu@killi" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = { inputs = inputs; };
+          modules = [ 
+            ./modules/full.nix
             zen-browser.homeModules.default
           ];
-
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
+        };
+        "poaclu@kermel" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = { inputs = inputs; };
+          modules = [ 
+            ./modules/full.nix
+            zen-browser.homeModules.default
+          ];
+        };
       };
     };
 }
