@@ -107,6 +107,7 @@
           globurl = "noglob urlglobber ";
           grep = "grep";
           gs = "git status";
+          gd = "git diff";
           hackwow = "cmatrix | lolcat";
           history = "omz_history";
           ksh = "kitty +kitten ssh";
