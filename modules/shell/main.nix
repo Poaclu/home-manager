@@ -109,7 +109,6 @@
           gs = "git status";
           hackwow = "cmatrix | lolcat";
           history = "omz_history";
-          home-rebuild = "home-manager switch --flake ~/.config/home-manager/ -b bak";
           ksh = "kitty +kitten ssh";
           l = "ls -lah";
           la = "ls -lAh";
@@ -120,7 +119,9 @@
           md = "mkdir -p";
           mount = "sudo mount";
           mv = "mv -iv";
-          nix-rebuild = "sudo nixos-rebuild switch --flake /etc/nixos/";
+          update-home = "home-manager switch --flake ~/.config/home-manager/ -b bak || topgrade --only home_manager";
+          update-nix = "sudo nixos-rebuild switch --flake /etc/nixos/ || topgrade --only system";
+          upgrade-flake = "nix flake update --flake ~/sources/nix-config && nix flake update --flake ~/.config/home-manager && topgrade --only system home_manager";
           pacman = "sudo pacman";
           pdw = "pwd";
           poweroff = "sudo poweroff";
