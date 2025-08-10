@@ -11,11 +11,18 @@
 				modules-center = [ "clock" "hyprland/workspaces" ];
 				modules-right = [  "bluetooth" "tray" "network" "pulseaudio" "custom/power" ];
 				"hyprland/workspaces" = {
-					format = "{icon}";
+					format = "{name}";
 					format-icons = {
-						active = "";
-						default = "";
-						empty = "";
+						"1" = "1";
+						"2" = "2";
+						"3" = "3";
+						"4" = "4";
+						"5" = "5";
+						"6" = "6";
+						"7" = "7";
+						"8" = "8";
+						"9" = "9";
+						"10" = "10";
 					};
 				};
 				keyboard-state = {
@@ -120,6 +127,16 @@
 			window#waybar.hidden {
 				opacity: 0.2;
 			}
+			#workspaces button {color: white;}
+			#workspaces button.active {
+				background: #4c566a;
+				color: #eceff4;
+				font-weight: bold;
+				padding: 0 6px;
+			}
+			#workspaces button:hover {background: #444;}
+			#workspaces button.urgent { background: #bf616a; color: #ffffff; }
+			#workspaces button.visible { outline: 1px solid #000000; }
 			.modules-left {
 				border-radius:10px;
 				box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
