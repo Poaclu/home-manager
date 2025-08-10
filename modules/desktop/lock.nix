@@ -11,7 +11,7 @@
     };
   };  
   config = lib.mkIf config.desktop.lock {
-    home = {
+    programs = {
       swaylock = {
         enable = true;
         settings = {
