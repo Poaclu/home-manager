@@ -41,6 +41,7 @@
 #dots_text_format = "*";
 #dots_size = 0.4;
 				dots_spacing = 0.3;
+				dots_center = true;
 #hide_input = true;
 				position = "0, -20";
 				halign = "center";

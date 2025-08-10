@@ -23,6 +23,7 @@
           obsidian
           parsec-bin
           pavucontrol
+          playerctl
           spotify
 	  swww
           xfce.thunar

@@ -3,7 +3,7 @@
 
   inputs = {
     # Import nix-config from GitHub
-    nix-config.url = "github:Poaclu/nix-config/update/unstable";
+    nix-config.url = "github:Poaclu/nix-config/dev";
     hyprland.url = "github:hyprwm/Hyprland";
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
