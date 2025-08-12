@@ -153,6 +153,8 @@
 					", XF86AudioPlay, exec, playerctl play-pause"
 					", XF86AudioNext, exec, playerctl next"
 					", XF86AudioPrev, exec, playerctl previous"
+					", XF86MonBrightnessUp, exec, brightnessctl s +10%"
+					", XF86MonBrightnessDown, exec, brightnessctl s 10%-"
 				];
 				bindm = [ 
 					"$mainMod, mouse:272, movewindow"

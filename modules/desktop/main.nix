@@ -14,6 +14,7 @@
     home = {
       packages = with pkgs; [
         brave
+        brightnessctl
           discord
           discover-overlay
           font-awesome
