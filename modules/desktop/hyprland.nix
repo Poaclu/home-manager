@@ -26,6 +26,7 @@
 				"$browser"
 				"discord"
 				"discover-overlay"
+				"protonvpn-app"
 				"steam"
 				"obsidian"
 			];
