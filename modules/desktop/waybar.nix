@@ -9,7 +9,7 @@
 				spacing = 8;
 				modules-left = [ "custom/notification" "pavucontrol" "keyboard-state" "cpu" "memory" "temperature" ];
 				modules-center = [ "clock" "hyprland/workspaces" ];
-				modules-right = [  "bluetooth" "tray" "network" "pulseaudio" "custom/power" ];
+				modules-right = [ "battery" "bluetooth" "tray" "network" "pulseaudio" "custom/power" ];
 				"hyprland/workspaces" = {
 					format = "{name}";
 					format-icons = {
