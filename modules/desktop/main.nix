@@ -25,6 +25,7 @@
           parsec-bin
           pavucontrol
           playerctl
+          prismlauncher
           protonvpn-gui
           spotify
 	  swww
